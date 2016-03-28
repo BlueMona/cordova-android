@@ -172,6 +172,7 @@ public class CordovaActivity extends Activity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
 
+        appView.getView().setFilterTouchesWhenObscured(true);
         setContentView(appView.getView());
 
         if (preferences.contains("BackgroundColor")) {
