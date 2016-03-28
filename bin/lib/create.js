@@ -284,6 +284,7 @@ exports.create = function(project_path, config, options, events) {
         });
         // Link it to local android install.
         writeProjectProperties(project_path, target_api);
+        shell.cp('-f', path.join(ROOT, 'framework', 'gradle.properties'), project_path);
         prepBuildFiles(project_path);
         events.emit('log', generateDoneMessage('create', options.link));
     }).thenResolve(project_path);
